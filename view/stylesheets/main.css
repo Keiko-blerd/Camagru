@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+/* Fonts*/
+
+@font-face {
+    font-family: 'Nilland';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Nilland-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland-Bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Nilland-SmallCaps';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland-SmallCaps.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Nilland-ExtraBold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland-ExtraBold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Nilland-Black';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland-Black.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Nilland-SmallCaps-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Nilland-SmallCaps-Bold.ttf') format('ttf');
+}
+
+
+/*      Body         */
+
+body {
+    font-family: 'Nilland';
+    margin: 0;
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: [topbar] 10% [article] 1fr [footer] 10%;
+    grid-template-columns: [nav] 7% [main]1fr;
+    height: 100%;
+    grid-template-areas: "nav topbar" "nav article" "nav footer";
+}
+
+.nav {
+    display: grid;
+    grid-template-rows: [home] 10% [icon-bar] 1fr [footer-links] 10%;
+    grid-template-areas: "home" "icons" "footer-links";
+    grid-area: nav;
+    background: rgba(23, 37, 42, 0.8);
+}
+
+.home {
+    grid-area: home;
+    text-align: center;
+    padding: 9px;
+}
+
+.home a {
+    display: block;
+    /* Make the links appear below each other instead of side-by-side */
+    text-align: center;
+    /* Center-align text */
+    /* Add some padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: white;
+    /* White text color */
+    font-size: 36px;
+    /* Increased font-size */
+}
+
+.icon-bar {
+    grid-area: icons;
+    width: 100%;
+    /* Set a specific width */
+    background: rgba(23, 37, 42, 1);
+    /* Dark-grey background */
+}
+
+.icon-bar a {
+    display: block;
+    /* Make the links appear below each other instead of side-by-side */
+    text-align: center;
+    /* Center-align text */
+    padding: 27px;
+    /* Add some padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: white;
+    /* White text color */
+    font-size: 36px;
+    /* Increased font-size */
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+    /* Add a hover color */
+}
+
+.active {
+    background-color: rgba(43, 167, 168, 1);
+    /* Add an active/current color */
+}
+
+.topbar {
+    grid-area: topbar;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    background: rgba(58, 175, 169, 0.5);
+}
+
+.searchBox {
+    grid-column: 1;
+    position: relative;
+    top: -25%;
+    left: 31%;
+    transform: translate(-50%, 50%);
+    background: rgba(43, 167, 168, 1);
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+.searchBox:hover>.searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover>.searchButton {
+    background: rgba(43, 167, 168, 1);
+    color: #feffff;
+}
+
+.searchButton {
+    color: rgba(43, 167, 168, 1);
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #feffff;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+@media screen and (max-width: 620px) {
+    .searchBox {
+        padding: 0px;
+    }
+    .searchBox:hover>.searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+}
+
+.logo {
+    grid-column: 2;
+    font-family: 'Nilland';
+    font-size: 1.2em;
+}
+
+#brand {
+    color: #17252A;
+}
+
+.social {
+    grid-column: 3;
+    color: rgba(43, 167, 168, 0.8);
+    letter-spacing: 1em !important;
+}
+
+.main {
+    display: grid;
+    grid-template-rows: [header] 10% [content_] 1fr;
+    grid-template-columns: [left-gutter] 20% [gallery] 1fr [right-gutter] 20%;
+    grid-template-areas: "header header header" "content_ content_ content_";
+    grid-area: article;
+}
+
+.hero-main {
+    display: grid;
+    grid-template-rows: [header] 10% [content_] 1fr;
+    grid-template-columns: [left-gutter] 20% [gallery] 1fr [right-gutter] 20%;
+    grid-template-areas: "header header header" "content_ content_ content_";
+    grid-area: article;
+    text-align: center;
+    background-image: linear-gradient(rgba(23, 37, 42, 0.8), rgba(23, 37, 42, 0.8)), url("../images/analogue-aperture-black-and-white-1203819.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+#hero-header {
+    grid-area: header;
+    color: white;
+    font-size: 4em;
+    margin-top: 1em;
+}
+
+#hero-text {
+    grid-area: content_;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 4em;
+}
+
+#hero-icon {
+    grid-area: content_;
+    color: white;
+    font-size: 2.5em;
+    margin-top: 5em;
+}
+
+.hero-button {
+    grid-area: content_;
+    cursor: pointer;
+    font-size: 21em;
+}
+
+.hero-button button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: transparent;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*.wrapper {
+    display: grid;
+    grid-template-rows: [header] 5% [content_] 1fr;
+    grid-template-columns: [left-gutter] 10% [gallery] 1fr [right-gutter] 10%;
+    grid-template-areas: "header header header" "l_side content_ r_side";
+    grid-area: article;
+    text-align: center;
+}*/
+
+.footer {
+    grid-area: footer;
+    background: rgba(23, 37, 42, 0.7);
+}
