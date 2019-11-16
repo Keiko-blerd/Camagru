@@ -1,5 +1,5 @@
 <?php
-require_once ('../config/setup.php');
+require_once ('./model/config/setup.php');
 
 $db = "camagru";
 
