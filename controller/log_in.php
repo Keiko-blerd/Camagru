@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('../model/config/database.php');
+require_once ('../model/create_tables.php');
 $fields_error = $accounts_error = "";  
     if (isset($_POST["login"]))  
         {  
@@ -27,12 +27,10 @@ $fields_error = $accounts_error = "";
                         echo "maybe";
 
                         if (password_verify($log_password, $row['user_password'])){
-
-                            
                             
                             echo "before";
 
-                            header('location:/camagru/');
+                            header('location:/camagru/index.php');
 
                             echo "after";
                     }  
@@ -40,7 +38,7 @@ $fields_error = $accounts_error = "";
                     }
                     else  
                     {  
-                        echo "<script>alert('Please Verify Or Register Account')</script>";  
+                        $account_error = 'Please Verify Or Register Account';  
                     }  
             }
             catch(PDOException $e)  

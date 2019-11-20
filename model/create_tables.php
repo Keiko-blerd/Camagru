@@ -1,5 +1,5 @@
 <?php
-require_once ('./model/config/database.php');
+require_once ('../../model/config/database.php');
 try {
     // sql to create table
     $sql = "CREATE TABLE IF NOT EXISTS $db.user (

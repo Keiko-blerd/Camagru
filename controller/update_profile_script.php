@@ -1,6 +1,6 @@
-<?php
+ <?php
    session_start();
-   require_once ('../model/tables.php');
+   require_once ('../model/config/database.php');
 
 
    $ID = $_SESSION['userid'];
@@ -20,10 +20,12 @@
        $statement->execute(array($user_name)); 
        if ($statement->execute())
        {
-           $message = "Hi there, Some information on your Camagru profile has been changed!";
+           $message = "Hi there, your username on Camagru has been updated!";
            mail($user_email, "Profile details changed", $message, "From :info@camagru.co.za");
            echo"<script>alert('username changed!')</script>";
            return ;
+
+           header('location:/camagru/');
        }
    }
 
@@ -35,7 +37,7 @@
         echo"<script>alert('you cant leave this field empty!')</script>";
         return ;
     }
-    $user_email = $_POST['user_email'];
+     $user_email = $_POST['user_email'];
 
     $sql = ("SELECT * FROM $db.user WHERE user_email = ?");
        $statement = $conn->prepare($sql);
@@ -56,12 +58,13 @@
 
        if ($statement->execute())
        {
-           $message = "Hi there, Some information on your Camagru profile has been changed!";
+           $message = "Hi there, your email details on Camagru have been updated!";
            mail($user_email, "Profile details changed", $message, "From :info@camagru.co.za");
            echo"<script>alert('Email Updated')</script>";
            return ;
+
+           header('location:/camagru/');
        }
-       echo $_SESSION['usermail'];
     }
 
     if (isset($_POST['password']))
@@ -80,11 +83,13 @@
         $statement = $conn->prepare($sql); 
         if($statement->execute())
         {
-         $message = "Hi there, Some information on your Camagru profile has been changed!";
+         $message = "Hi there, your password on Camagru has been updated!";
             
          mail($user_email, "Profile details changed", $message, "From :info@camagru.co.za");
         echo"<script>alert('password changed!')</script>";
         return ;
+
+        header('location:/camagru/');
         }
     }
     else 
@@ -104,9 +109,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/f7d9248e42.js" crossorigin="anonymous"></script>
-    <link href='../view/css/main.css' rel='stylesheet' type='text/css'>
-    <link href='../view/css/font.css' rel='stylesheet' type='text/css'>
-    <link href='../view/css/style.css' rel='stylesheet' type='text/css'>
+    <link href='../css/main.css' rel='stylesheet' type='text/css'>
+    <link href='../css/font.css' rel='stylesheet' type='text/css'>
+    <link href='../css/style.css' rel='stylesheet' type='text/css'>
+    <link href='../css/user.css' rel='stylesheet' type='text/css'>
     <title>Update Profile</title>
 </head>
 
@@ -118,7 +124,7 @@
             </div>
             <div class="icon-bar">
                <a class="active" href="#"><i class="fa fa-home"></i></a> 
-               <a href="#"><i class="fas fa-users-cog"></i></a> 
+               <a href="#"><i class="fa fa-search"></i></a> 
                <a href="#"><i class="fa fa-envelope"></i></a>
                <a href="#"><i class="fa fa-map"></i></a>
                <a href="#"><i class="fa fa-calendar"></i></a>
@@ -133,7 +139,7 @@
                 <button class="searchButton" href="#"><i class="fas fa-search"></i></button>
             </div>
             <div class="logo">
-                <h1 id="brand"><i class="fas fa-camera-retro"></i> Camagru</h1>
+                <h1 id="brand"><i class="fas fa-camera-retro"></i> Camgaru</h1>
             </div>
             <div class="social">
                 <i class="fab fa-github-square fa-2x"></i>
@@ -141,34 +147,35 @@
             </div>
         </div>
         <div id="main">
-            <form method="post" enctype="multipart/form-data" style="grid-area: gallery;">
-                <table align = "center" width=400>
-                    <tr align = center>
-                        <td colspan = "8">
-                            <h2>Update Profile</h2>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align = "right"><strong>Update Username :</strong></td>
-                        <td><input type="text" name="user_name" placeholder="Enter new username"></td>
-                        <td align = "center" colspan = "8"><input type="submit" name="username" value="Update"></td>
-                    </tr>
-                    <tr>
-                        <td align = "right"><strong>Update Email :</strong></td>
-                        <td><input type="email" name="user_email" placeholder="Enter new email"></td>
-                        <td align = "center" colspan = "8"><input type="submit" name="email" value="Update"></td>
-                    </tr>
-                    <tr>
-                        <td align = "right"><strong>Update Password :</strong></td>
-                        <td><input type="password" name="user_password" placeholder="Enter new password"></td>
-                    </tr>
-                    <tr>
-                        <td align = "right"><strong>Re-Enter Password :</strong></td>
-                        <td><input type="password" name="re_password" placeholder="Confrim your password"></td>
-                        <td align = "center" colspan = "8"><input type="submit" name="password" value="Update"></td>
-                    </tr> 
-                </table>
-            </form>
+        <form method="post" enctype="multipart/form-data">
+        <table align = "center" width=400>
+            <tr align = center>
+                <td colspan = "8">
+                    <h2>Update Profile</h2>
+                </td>
+            </tr>
+            <tr>
+                 <td align = "right"><strong>Update Username :</strong></td>
+                 <td><input type="text" name="user_name" placeholder="Enter new username"></td>
+                 <td align = "center" colspan = "8"><input type="submit" name="username" value="Update"></td>
+            </tr>
+            <tr>
+                 <td align = "right"><strong>Update Email :</strong></td>
+                 <td><input type="email" name="user_email" placeholder="Enter new email"></td>
+                 <td align = "center" colspan = "8"><input type="submit" name="email" value="Update"></td>
+            </tr>
+            <tr>
+                 <td align = "right"><strong>Update Password :</strong></td>
+                 <td><input type="password" name="user_password" placeholder="Enter new password"></td>
+            </tr>
+            <tr>
+                 <td align = "right"><strong>Re-Enter Password :</strong></td>
+                 <td><input type="password" name="re_password" placeholder="Confrim your password"></td>
+                 <td align = "center" colspan = "8"><input type="submit" name="password" value="Update"></td>
+            </tr> 
+        </table>
+    </form>
+        </div>
         </div>
         <div class="footer">
 

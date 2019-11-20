@@ -1,6 +1,6 @@
 <?php
 
-require_once ('./model/tables.php');
+require_once ('../model/config/database.php');
 
 $alias_error = $email_error = $pass_error = $re_error = "";
 
@@ -57,14 +57,20 @@ if(isset($_POST["submit"])){
                 $stmt->execute(['username'=>$usrname, 'email'=>$user_email, 'password'=>$hash, 'vkey'=>$vkey]);
 
                 $user_email = $_POST['email'];
-                $subject = "Verification email";
-                $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";
-                $headers = 'From: info@camagru.co.za'."\r\n";
-                $headers .= "MIME-Version: 1.0"."\r\n";
-                $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
 
-                $result = mail($user_email, $subject, $message, $headers);
-                echo "<script>alert('Thank you for registering. We have sent you a verification link')</script>";
+                $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";
+                mail($user_email, "Verification Email", $message, "From :info@camagru.co.za");
+                echo "Thank you for registering. We have sent you a verification link";
+               return ;
+
+                // $subject = "Verification email";
+                // $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";
+                // $headers = 'From: info@camagru.co.za'."\r\n";
+                // $headers .= "MIME-Version: 1.0"."\r\n";
+                // $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+
+                // $result = mail($user_email, $subject, $message, $headers);
+                // echo "<script>alert('Thank you for registering. We have sent you a verification link')</script>";
             }
             catch(PDOException $e)
             {
