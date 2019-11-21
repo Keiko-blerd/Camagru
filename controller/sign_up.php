@@ -60,8 +60,8 @@ if(isset($_POST["submit"])){
 
                 $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";
                 mail($user_email, "Verification Email", $message, "From :info@camagru.co.za");
-                echo "Thank you for registering. We have sent you a verification link";
-               return ;
+                echo "Thank you for registering. We have sent you a verification link to your email";
+                header('location: /camagru/index.php');
 
                 // $subject = "Verification email";
                 // $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";

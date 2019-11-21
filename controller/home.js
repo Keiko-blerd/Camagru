@@ -11,7 +11,7 @@ function loadPage(url, success, fail) {
 }
 
 function render(req) {
-    document.getElementById("load").innerHTML = req.responseText;
+    document.getElementById("show").innerHTML = req.responseText;
 
     var re = new RegExp(/\<script[^\>]*src=\"(.*)\"[^\>]*\>/);
     var ret = req.responseText.matchAll(re);

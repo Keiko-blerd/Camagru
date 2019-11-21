@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <?php require_once('./model/config/database.php')  ?>
 <head>
@@ -20,7 +21,7 @@
     <div class="topbar_wrapper">
         <?php include('./includes/header.php') ?>
     </div>
-    <div id="load">
+    <div id="show">
         <div class="hero-wrapper">
             <h1 class="hero-header">Welcome To <span>Camagru</span></h1>
             <div class="content_wrapper">
@@ -30,13 +31,17 @@
                         echo $_SESSION['username'];
                     }
                     else{
-                    echo "Please Click on the Lens";
+                    echo "Please Click on the Lens to Login";
                     }?>
                 </p>
-                <i id="hero-icon" class="fas fa-arrow-circle-down"></i>
                 <div class="wrapper1">
                     <div class="button" onclick="loadPage('view/html/login.php', render, err)">
-                        <span class="button-text">Press</span>
+                        <span class="button-text">
+                            <?php 
+                            if(!isset($_SESSION['username'])){    
+                                echo "Press"; 
+                            }?>
+                        </span>
                     </div>
                 </div>
             </div>

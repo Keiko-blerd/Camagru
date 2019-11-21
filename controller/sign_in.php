@@ -24,17 +24,10 @@ $fields_error = $accounts_error = "";
                         $_SESSION['username'] = $row['user_username'];
                         $_SESSION['usermail'] = $row['user_email'];
 
-                        echo "maybe";
-
-                        if (password_verify($log_password, $row['user_password'])){
-
-                            
-                            
-                            echo "before";
+                        if (password_verify($log_password, $row['user_password'])){ 
 
                             header('location:/camagru/');
-
-                            echo "after";
+                            
                     }  
                     
                     }
