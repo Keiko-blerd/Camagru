@@ -35,14 +35,16 @@
                     }?>
                 </p>
                 <div class="wrapper1">
-                    <div class="button" onclick="loadPage('view/html/login.php', render, err)">
-                        <span class="button-text">
-                            <?php 
-                            if(!isset($_SESSION['username'])){    
-                                echo "Press"; 
-                            }?>
-                        </span>
-                    </div>
+                    <a href="/camagru/view/html/login.php">
+                        <div class="button">
+                            <span class="button-text">
+                                <?php 
+                                if(!isset($_SESSION['username'])){    
+                                    echo "Press"; 
+                                }?>
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

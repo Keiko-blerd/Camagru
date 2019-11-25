@@ -188,3 +188,8 @@ a {
 .foot-lnk {
     text-align: center;
 }
+
+.error {
+    font-family: 'Nilland';
+    color: red;
+}
