@@ -34,7 +34,9 @@ captureState();
 //
 function addsticker() {
     let sticker = new Image();
-    sticker.src = 'uploads/stickers/images.png';
+    sticker.src = '../../img/stickers/blue-wings.png';
+    sticker.src = '../../img/stickers/frame.png';
+    sticker.src = '../../img/stickers/heart.png';
     stickerContext.drawImage(sticker, 0, 0, 250, 250);
 }
 

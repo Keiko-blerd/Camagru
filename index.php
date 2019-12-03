@@ -15,10 +15,8 @@
 </head>
 <body>
 <div class="grid-container">
+    <?php include('./includes/topbar.php') ?>
     <div class="nav_wrapper">
-        <?php include('./includes/nav.php') ?>
-    </div>
-    <div class="topbar_wrapper">
         <?php include('./includes/header.php') ?>
     </div>
     <div id="show">

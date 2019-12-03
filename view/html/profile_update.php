@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if (!($_SESSION['userid']))
+	{
+		header('location:/camagru/index.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once('../../model/create_tables.php')  ?>
@@ -15,14 +22,12 @@
 </head>
 <body>
 <div class="grid-container">
+	<?php include('../../includes/topbar.php') ?>
     <div class="nav_wrapper">
-        <?php include('../../includes/nav.php') ?>
-    </div>
-    <div class="topbar_wrapper">
         <?php include('../../includes/header.php') ?>
     </div>
     <div id="show">
-        <div class="wrapper2">
+        <div class="wrapper1">
 			<div class="update">
 				<form action="" method="post" enctype="multipart/form-data">
 					<table align = "center" width=400>

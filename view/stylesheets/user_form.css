@@ -24,7 +24,20 @@ a {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 795px;
+    min-height: 758px;
+    position: relative;
+    background-image: url("../../img/aperture-camera-classic-1030928.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+
+.forgot-wrap {
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 758px;
     position: relative;
     background-position: center;
     background-size: cover;
@@ -40,7 +53,7 @@ a {
     padding-right: 73px;
     padding-top: 55px;
     padding-bottom: 86px;
-    background: rgba(16, 49, 41, 0.76);
+    background: var(--color_six);
 }
 
 .login-html .sign-up-htm {
@@ -67,13 +80,26 @@ a {
     text-transform: uppercase;
 }
 
-.login-html .tab {
+.login-html .tab1 {
     font-size: 22px;
     margin-right: 15px;
     padding-bottom: 5px;
     margin: 0 15px 10px 0;
     display: inline-block;
     border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    color: var(--color_three);
+}
+
+.login-html .tab2 {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    color: var(--color_four);
 }
 
 .login-html .sign-in:checked+.tab,
@@ -115,12 +141,12 @@ a {
 }
 
 .login-form .group .label {
-    color: #aaa;
+    color: var(--topbar);
     font-size: 12px;
 }
 
 .login-form .group .button {
-    background: #112D32;
+    background: var(--color_six);
 }
 
 .login-form .group label .icon {
@@ -186,10 +212,11 @@ a {
 }
 
 .foot-lnk {
+    color: var(--color_two);
     text-align: center;
 }
 
 .error {
     font-family: 'Nilland';
-    color: red;
+    color: var(--color_two);
 }

@@ -16,18 +16,16 @@
 </head>
 <body>
 <div class="grid-container">
+    <?php include('../../includes/topbar.php') ?>
     <div class="nav_wrapper">
-        <?php include('../../includes/nav.php') ?>
-    </div>
-    <div class="topbar_wrapper">
         <?php include('../../includes/header.php') ?>
     </div>
-    <div id="show">
+    <div id="formshow">
         <div class="wrapper2">
             <div class="login-wrap">
                 <form action="" method="post" class="login-html">
-                    <a href="/camagru/view/html/login.php"><label  class="tab">Sign In</label></a>
-                    <a href="/camagru/view/html/register.php"><label  class="tab">Sign Up</label></a>
+                    <a href="/camagru/view/html/login.php"><label  class="tab1">Sign In</label></a>
+                    <a href="/camagru/view/html/register.php"><label  class="tab2">Sign Up</label></a>
                     <div class="login-form">
                         <div class="sign-up-htm">
                             <div class="group">
@@ -39,7 +37,7 @@
                                 <label for="pass" class="label">Password</label>
                                 <input id="pass" name="pass" type="password" class="input" data-type="password">
                                 <span class="error"><?=$pass_error ?></span>
-                            </div>
+                                </div>
                             <div class="group">
                                 <label for="pass" class="label">Repeat Password</label>
                                 <input id="pass"  name="confirm" type="password" class="input" data-type="password">
@@ -55,12 +53,15 @@
                             </div>
                             <div class="hr"></div>
                             <div class="foot-lnk">
-                                <label for="tab-1">Already Member?</a>
+                                <a href="login.php">Already a member?</a>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="wrapper3">
+        
         </div>
     </div>
     <?php include('../../includes/footer.php') ?>

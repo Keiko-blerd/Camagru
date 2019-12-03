@@ -15,18 +15,16 @@
 </head>
 <body>
 <div class="grid-container">
+    <?php include('../../includes/topbar.php') ?>
     <div class="nav_wrapper">
-        <?php include('../../includes/nav.php') ?>
-    </div>
-    <div class="topbar_wrapper">
         <?php include('../../includes/header.php') ?>
     </div>
-    <div id="show">
+    <div id="formshow">
         <div class="wrapper2">
             <div class="login-wrap">
                 <form action="" method="post" class="login-html">
-                    <a href="/camagru/view/html/login.php"><label  class="tab">Sign In</label></a>
-                    <a href="/camagru/view/html/register.php"><label  class="tab">Sign Up</label></a>
+                    <a href="/camagru/view/html/login.php"><label  class="tab2">Sign In</label></a>
+                    <a href="/camagru/view/html/register.php"><label  class="tab1">Sign Up</label></a>
                     <div class="login-form">
                         <div class="sign-in-htm">
                             <div class="group">
@@ -44,12 +42,15 @@
                             <span class="error"> <?= $accounts_error ?> </span>
                             <div class="hr"></div>
                             <div class="foot-lnk">
-                                <a href="forgot_password_script.php">Forgot Password?</a>
+                                <a href="forgot_password.php">Forgot Password?</a>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="wrapper3">
+        
         </div>
     </div>
     <?php include('../../includes/footer.php') ?>

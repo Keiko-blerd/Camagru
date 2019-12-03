@@ -1,387 +1,372 @@
-@charset "UTF-8";
-
-/* Fonts*/
-
-@font-face {
-    font-family: 'Nilland';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'Nilland-Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland-Bold.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'Nilland-SmallCaps';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland-SmallCaps.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'Nilland-ExtraBold';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland-ExtraBold.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'Nilland-Black';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland-Black.ttf') format('ttf');
-}
-
-@font-face {
-    font-family: 'Nilland-SmallCaps-Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Nilland-SmallCaps-Bold.ttf') format('ttf');
-}
-
-
-/*      Body         */
-
-body {
-    font-family: 'Nilland';
-    margin: 0;
-    height: 100vh;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-rows: [topbar] 10% [article] 1fr [footer] 10%;
-    grid-template-columns: [nav] 6% [main]1fr;
-    height: 100%;
-    grid-template-areas: "nav topbar" "nav article" "nav footer";
-}
-
-.nav_wrapper {
-    grid-area: nav;
-    width: 100%;
-    background: rgba(23, 37, 42, 1);
-}
-
-.nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-items: center;
-}
-
-.icon-bar {
-    flex: 1;
-    order: 2;
-    background: rgba(23, 37, 42, 1);
-}
-
-.icon-bar a {
-    display: flex;
-    padding: 34px;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 36px;
-    font-size: 1.6em;
-    text-decoration: none;
-}
-
-.icon-bar a:hover {
-    background-color: #000;
-    /* Add a hover color */
-}
-
-.active {
-    background-color: rgba(43, 167, 168, 1);
-    /* Add an active/current color */
-}
-
-.topbar_wrapper {
-    grid-area: topbar;
-    width: 100%;
-    background: rgba(58, 175, 169, 0.5);
-}
-
-.topbar {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: rgba(58, 175, 169, 0.5);
-}
-
-.searchBox {
-    order: 1;
-    flex: 1;
-}
-
-.searchBox:hover>.searchInput {
-    width: 240px;
-    padding: 0 6px;
-}
-
-.searchBox:hover>.searchButton {
-    background: rgba(43, 167, 168, 1);
-    color: #feffff;
-}
-
-.searchButton {
-    color: rgba(43, 167, 168, 1);
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-.searchInput {
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: #feffff;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-}
-
-@media screen and (max-width: 620px) {
-    .searchBox {
-        padding: 0px;
+    @charset "UTF-8";
+     :root {
+        --color_one: rgba(58, 70, 96, 1);
+        --color_two: rgba(194, 221, 230, 1);
+        --color_three: rgba(201, 175, 152, 1);
+        --color_four: rgba(237, 138, 99, 1);
+        --color_five: rgba(132, 80, 7, 1);
+        --color_six: rgba(58, 70, 96, 0.8);
+        --color_seven: rgba(237, 138, 99, 0.5);
+        --topbar: rgba(237, 138, 99, 0.7);
+        --topbar_shade: rgba(237, 138, 99, 0.5);
     }
-    .searchBox:hover>.searchInput {
-        width: 80px;
-        padding: 0 6px;
+    /* Fonts*/
+    
+    @font-face {
+        font-family: 'Nilland';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland.ttf') format('ttf');
     }
-}
-
-.logo {
-    flex: 1;
-    order: 2;
-    text-align: center;
-    font-family: 'Nilland';
-    font-size: 1.2em;
-}
-
-#brand {
-    color: #17252A;
-}
-
-.social {
-    flex: 1;
-    order: 3;
-    color: rgba(43, 167, 168, 0.8);
-    letter-spacing: 1em !important;
-    text-align: center;
-    padding: 2%;
-}
-
-
-/* #main {
-    display: grid;
-    grid-template-rows: [header] 10% [content_] 1fr;
-    grid-template-columns: [left-gutter] 20% [gallery] 1fr [right-gutter] 20%;
-    grid-template-areas: "left header right" "left content_ right";
-    grid-area: article;
-} */
-
-#show {
-    grid-area: article;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-image: linear-gradient(rgba(23, 37, 42, 0.8), rgba(23, 37, 42, 0.8)), url("../../img/analogue-aperture-black-and-white-1203819.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    justify-content: center;
-}
-
-.hero-wrapper {
-    display: grid;
-    grid-template-rows: [header] 10% [content_] 1fr;
-    grid-template-columns: [left-gutter] 10% [gallery] 1fr [right-gutter] 10%;
-    grid-template-areas: "left header right" "left content_ right";
-}
-
-.hero-header {
-    grid-area: header;
-    color: #fff;
-    font-family: 'Nilland';
-    font-size: 4em;
-}
-
-.content_wrapper {
-    grid-area: content_;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 5em;
-}
-
-.hero-text {
-    order: 1;
-    color: white;
-    font-size: 1.8em;
-}
-
-#hero-icon {
-    order: 2;
-    color: white;
-    font-size: 2.5em;
-}
-
-.hero-button {
-    grid-area: content_;
-    cursor: pointer;
-    font-size: 21em;
-}
-
-.hero-button button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 10px 25px;
-    color: transparent;
-    background-color: transparent;
-    text-align: center;
-    cursor: pointer;
-}
-
-
-/*.wrapper {
-    display: grid;
-    grid-template-rows: [header] 5% [content_] 1fr;
-    grid-template-columns: [left-gutter] 10% [gallery] 1fr [right-gutter] 10%;
-    grid-template-areas: "header header header" "l_side content_ r_side";
-    grid-area: article;
-    text-align: center;
-}*/
-
-.footer {
-    grid-area: footer;
-    background: rgba(23, 37, 42, 0.7);
-    color: #fff;
-    font-size: 0.7em;
-}
-
-.details {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-items: center;
-}
-
-.details i {
-    color: rgba(43, 167, 168, 0.8);
-}
-
-
-/* modal  */
-
-.wrapper2 {
-    position: absolute;
-    left: 37.9%;
-    width: 550px;
-    height: 775px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.wrapper1 {
-    grid-area: content_;
-    position: absolute;
-    left: 25%;
-    top: 10%;
-    width: 57%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button {
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    -webkit-appearance: none;
-    background: none;
-    outline: none;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-radius: 2px;
-    transition: all 0.5s ease;
-    font-weight: 600;
-    font-size: 14px;
-    height: 60px;
-    width: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 0 white, 0 0 0 white;
-    left: 1%;
-    top: 1%;
-}
-
-.popup {
-    opacity: 1;
-    width: 58%;
-    height: 100%;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease
-}
-
-.popup-inside {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 0 0 black;
-}
-
-.content {
-    --offset: 0;
-    position: absolute;
-    left: var(--offset);
-    right: var(--offset);
-    bottom: var(--offset);
-    top: var(--offset);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: all 0.35s ease 0.75s;
-    z-index: 10;
-}
-
-.update {
-    font-family: 'Nilland-SmallCaps-Bold' !important;
-    top: 21%;
-    color: rgba(23, 37, 42, 1);
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    padding-top: 5em;
-    background: rgba(58, 175, 169, 0.7);
-}
+    
+    @font-face {
+        font-family: 'Nilland-Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland-Bold.ttf') format('ttf');
+    }
+    
+    @font-face {
+        font-family: 'Nilland-SmallCaps';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland-SmallCaps.ttf') format('ttf');
+    }
+    
+    @font-face {
+        font-family: 'Nilland-ExtraBold';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland-ExtraBold.ttf') format('ttf');
+    }
+    
+    @font-face {
+        font-family: 'Nilland-Black';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland-Black.ttf') format('ttf');
+    }
+    
+    @font-face {
+        font-family: 'Nilland-SmallCaps-Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: url('../fonts/Nilland-SmallCaps-Bold.ttf') format('ttf');
+    }
+    /*      Body         */
+    
+    body {
+        font-family: 'Nilland';
+        margin: 0;
+        height: 100vh;
+    }
+    
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .topbar {
+        height: 6%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-image: linear-gradient(var(--topbar), var(--topbar));
+    }
+    
+    .icon-bar {
+        flex: 1;
+        font-size: 1.7em;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        text-align: center;
+        color: var(--color_one);
+        margin-top: 0.4em;
+    }
+    
+    .icon-bar a:hover {
+        color: var(--color_one) !important;
+    }
+    
+    .nav_wrapper {
+        height: 7%;
+        width: 100%;
+        background: var(--color_three);
+    }
+    
+    header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 70px;
+    }
+    
+    .brand {
+        font-size: 2em;
+        font-family: 'Nilland-Bold';
+        color: var(--color_one);
+        flex: 1;
+        text-align: center;
+        margin: 15px;
+    }
+    
+    .brand a {
+        text-decoration: none;
+    }
+    
+    nav {
+        flex: 1;
+    }
+    
+    ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end;
+        margin: 0px;
+    }
+    
+    li {
+        margin: 20px;
+        font-family: 'Nilland-Bold';
+        font-size: 1.1em;
+    }
+    
+    li a {
+        color: var(--color_one);
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        text-decoration: none;
+        color: var(--color_four);
+    }
+    
+    .icon-bar a:hover {
+        background-color: #000;
+        /* Add a hover color */
+    }
+    
+    .active {
+        background-color: rgba(43, 167, 168, 1);
+        /* Add an active/current color */
+    }
+    
+    .stickers {
+        text-align: center;
+    }
+    
+    #show {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(var(--color_six), var(--color_seven)), url("../../img/analog-antique-camera-821653.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: center;
+        display: flex;
+    }
+    
+    #formshow {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+    
+    #forgotshow {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(var(--color_six), var(--color_seven)), url("../../img/analogue-aperture-black-and-white-1203819.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: center;
+        display: flex;
+    }
+    
+    .hero-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hero-header {
+        height: 15%;
+        color: var(--color_four);
+        font-family: 'Nilland';
+        font-size: 4em;
+    }
+    
+    .content_wrapper {
+        height: 5%;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .hero-text {
+        order: 1;
+        color: var(--color_four);
+        font-size: 1.8em;
+    }
+    
+    .wrapper1 a {
+        color: var(--color_two);
+        text-decoration: none;
+    }
+    
+    .camera {
+        display: flex;
+        height: 100%;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    video {
+        margin: 1em;
+    }
+    
+    .canvas_wrapper {
+        margin: 1em;
+    }
+    
+    canvas {
+        width: 90%;
+    }
+    
+    .small_images_display {
+        width: 70%;
+        background: var(--color_six);
+    }
+    
+    .footer {
+        grid-area: footer;
+        background: var(--color_four);
+        color: var(--color_six);
+        font-size: 0.7em;
+    }
+    
+    .details {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .details i {
+        color: var(--color_three);
+    }
+    /* modal  */
+    
+    .wrapper3 {
+        position: absolute;
+        left: 27%;
+        width: 73%;
+        min-height: 78.3%;
+        background-image: linear-gradient(var(--color_six), var(--color_seven)), url("../../img/blur-camera-camera-lens-752525.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .wrapper2 {
+        position: absolute;
+        left: 0%;
+        width: 27%;
+        height: 78.3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .wrapper1 {
+        position: absolute;
+        left: 22%;
+        top: 18%;
+        width: 57%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .button {
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        -webkit-appearance: none;
+        background: none;
+        outline: none;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border-radius: 2px;
+        transition: all 0.5s ease;
+        font-weight: 600;
+        font-size: 14px;
+        height: 60px;
+        width: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 white, 0 0 0 white;
+        left: 1%;
+        top: 1%;
+    }
+    
+    .popup {
+        opacity: 1;
+        width: 58%;
+        height: 100%;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease
+    }
+    
+    .popup-inside {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 0 0 black;
+    }
+    
+    .content {
+        --offset: 0;
+        position: absolute;
+        left: var(--offset);
+        right: var(--offset);
+        bottom: var(--offset);
+        top: var(--offset);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: all 0.35s ease 0.75s;
+        z-index: 10;
+    }
+    
+    .update {
+        font-family: 'Nilland-SmallCaps-Bold' !important;
+        top: 16%;
+        color: var(--color_one);
+        position: absolute;
+        width: 100%;
+        height: 54%;
+        padding-top: 7em;
+        background: var(--topbar);
+    }
