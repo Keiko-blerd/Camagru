@@ -1,5 +1,4 @@
  <?php
-   session_start();
    require_once ('../../model/config/database.php');
    
    if(isset($_POST['username']))

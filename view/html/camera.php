@@ -51,7 +51,7 @@
 					while ($image = $stmt->fetch(PDO::FETCH_ASSOC))
 					{
 				?>
-					<img src="<?=$image['path']?>" width="250" height="250"/>
+					<img src="<?=$image['path']?>" width="200" height="200"/>
 				<?php
 					}
 				?>

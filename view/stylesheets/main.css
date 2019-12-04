@@ -91,12 +91,13 @@
     }
     
     .nav_wrapper {
-        height: 7%;
+        height: 10%;
         width: 100%;
         background: var(--color_three);
     }
     
     header {
+        padding-top: 1em;
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -241,8 +242,8 @@
         width: 90%;
     }
     
-    .small_images_display {
-        width: 70%;
+    #pastposts {
+        width: 90%;
         background: var(--color_six);
     }
     
