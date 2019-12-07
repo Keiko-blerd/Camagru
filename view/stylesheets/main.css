@@ -235,11 +235,13 @@
     }
     
     .canvas_wrapper {
-        margin: 1em;
+        display: flex;
+        flex: row-reverse;
     }
     
     canvas {
         width: 90%;
+        margin: 1em;
     }
     
     #pastposts {

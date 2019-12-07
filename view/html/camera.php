@@ -28,21 +28,21 @@
 		<div class="camera">
 			<div class="canvas_wrapper">
 				<canvas id="CANVAS"></canvas>
+				<video id="video" autoplay="true"></video>
 			</div>
 			<div class="small_images_display">
 				<img id="image-display" width="200px"/>
 				<img id="sticker-display" width="200px"/>
 			</div>
-			<video id="video" autoplay="true"></video>
 			<div class="fields">
 				<input type="file" id="fileupload"/>
 				<input type="button" id="capture" value="snap!!"/>
 				<input type="button" id="save-btn" value="save"/>
 			</div>
 			<div class="stickers">
-				<img id = "1" src="../../img/stickers/blue-wings.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker"/>
-				<img id = "2" src="../../img/stickers/frame.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker2"/>
-				<img id = "3" src="../../img/stickers/heart.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker3"/>
+				<img id = "blue-wings" src="../../img/stickers/blue-wings.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker"/>
+				<img id = "frame" src="../../img/stickers/frame.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker2"/>
+				<img id = "heart" src="../../img/stickers/heart.png" onclick="addsticker(this.id)" width="50" height="50" alt="teststicker3"/>
 			</div>
 			<div id="pastposts">
 				<?php

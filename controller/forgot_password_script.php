@@ -18,7 +18,7 @@ if(isset($_POST['f_pass']))
     else
     {    
             $f_vkey = $row['user_vkey'];
-            $message = "Hi there, click on this <a href=\"http://localhost:8080/camagru/controller/reset_password_script.php?user_vkey=" . $f_vkey . "\">link</a> to change password";
+            $message = "Hi there, click on this <a href=\"http://localhost:8080/camagru/view/html/reset_password.php?user_vkey=" . $f_vkey . "\">link</a> to change password";
             mail($f_email, "change your password", $message, "From :info@camagru.co.za");
             echo"<script>alert('An email has been sent to you, you can close this page!')</script>";
     }

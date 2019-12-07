@@ -1,4 +1,4 @@
- <?php
+<?php
    require_once ('../../model/config/database.php');
    
    if(isset($_POST['username']))
@@ -14,15 +14,15 @@
 
        $sql = "UPDATE $db.user set user_username = '$user_name' WHERE userid = '$ID'";
        $statement = $conn->prepare($sql);
-       $statement->execute(array($user_name)); 
+       $statement->execute(array($user_name));
+       $row = $statement->rowCount(); 
        if ($statement->execute())
        {
            $message = "Hi there, your username on Camagru has been updated!";
            mail($user_email, "Profile details changed", $message, "From :info@camagru.co.za");
            echo"<script>alert('username changed!')</script>";
            return ;
-
-           header('location:/camagru/');
+           $_SESSION['username'] = $user_name;
        }
    }
 

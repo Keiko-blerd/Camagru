@@ -1,5 +1,6 @@
 <?php
     require_once('../../controller/forgot_password_script.php');
+    require_once('../../controller/forgot_password_script.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
     </div>
     <div id="forgotshow">
             <div class="forgot-wrap">
-                <form action="./camagru/controller/forgot_password_script.php" method="post" class="login-html">
+                <form action="" method="post" class="login-html">
                     <a href="/camagru/view/html/login.php"><label  class="tab2">Reset Password</label></a>
                     <div class="login-form">
                         <div class="sign-in-htm">

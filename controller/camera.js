@@ -32,12 +32,11 @@ captureState();
 // Upload segment
 
 //
-function addsticker() {
+function addsticker(id) {
     let sticker = new Image();
-    sticker.src = '../../img/stickers/blue-wings.png';
-    stickerContext.drawImage(sticker, 0, 0, 250, 250);
+    sticker.src = '../../img/stickers/' + id + '.png';
+    stickerContext.drawImage(sticker, 50, 50, 250, 250);
 }
-
 //capture.addEventListener("click", (event) => {
 //	stickerContext.drawImage(, 0,0);
 //});

@@ -3,7 +3,6 @@
 require_once ('../../model/config/database.php');
 
 $alias_error = $email_error = $pass_error = $re_error = "";
-
 function clean_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -57,11 +56,10 @@ if(isset($_POST["submit"])){
                 $stmt->execute(['username'=>$usrname, 'email'=>$user_email, 'password'=>$hash, 'vkey'=>$vkey]);
 
                 $user_email = $_POST['email'];
-
+                
                 $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";
                 mail($user_email, "Verification Email", $message, "From :info@camagru.co.za");
-                echo"<script>alert('Thank You For Registering Please Check Your Email And Verify')</script>";
-                header('location:/camagru/view/html/login.php');
+                header('location:/camagru/view/html/thank_you.php');
 
                 // $subject = "Verification email";
                 // $message = "<a href='http://localhost:8080/camagru/controller/email_verification.php?user_vkey=$vkey'>Validate account</a>";

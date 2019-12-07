@@ -1,37 +1,45 @@
-<?php
-
-    require_once('../../controller/reset_password_script.php');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+    <?php require_once('../../controller/reset_password_script.php') ?>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>change_password</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <script src="https://kit.fontawesome.com/f7d9248e42.js" crossorigin="anonymous"></script>
+    <script src="/camagru/controller/home.js"></script>
+    <link href='../stylesheets/main.css' rel='stylesheet' type='text/css'>
+    <link href='../stylesheets/responsive.css' rel='stylesheet' type='text/css'>
+    <link href='../stylesheets/user_form.css' rel='stylesheet' type='text/css'>
 <body>
-    <form method="post" >
-        <table align = "center" width=400>
-            <tr align = center>
-                <td colspan = "8">
-                <h1>CAMAGRU</h1>
-                    <h2>change password here!</h2>
-                </td>
-            </tr>
-            <tr>
-                <td align = "right"><strong>new password :</strong></td>
-                <td><input type="password" name="new_password" placeholder="new password" required></td>
-            </tr>
-            <tr>
-                <td align = "right"><strong>re-enter password :</strong></td>
-                <td><input type="password" name="retype_password" placeholder="re-enter password" required></td>
-            </tr>
-                <td align = "center" colspan = "8"><input type= "submit" name="new_pas" value= "submit!"></td>
-        </table>
-    </form>
+<div class="grid-container">
+    <?php include('../../includes/topbar.php') ?>
+    <div class="nav_wrapper">
+        <?php include('../../includes/header.php') ?>
+    </div>
+    <div id="show">
+        <div class="forgot-wrap">
+            <form action="" method="post" class="login-html">
+            <a href=""><label  class="tab2">Reset Password</label></a>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">New Password</label>
+                        <input id="user" name="new_password" type="password" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Confirm Password</label>
+                        <input id="user" name="retype_password" type="password" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" name="new_pas" class="button" value="Reset">
+                    </div>
+                    <span class="error"> <?= $match ?> </span>
+                        <div class="hr"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php include('../../includes/footer.php') ?>
 </body>
 </html>
