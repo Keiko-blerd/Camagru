@@ -245,8 +245,14 @@
     }
     
     #pastposts {
-        width: 90%;
-        background: var(--color_six);
+        width: 48%;
+        background: var(--color_three);
+    }
+
+    #pastposts img{
+        margin: 5px;
+        width: 150px;
+        width: 150px;
     }
     
     .footer {
@@ -272,7 +278,7 @@
         position: absolute;
         left: 27%;
         width: 73%;
-        min-height: 78.3%;
+        min-height: 78.5%;
         background-image: linear-gradient(var(--color_six), var(--color_seven)), url("../../img/blur-camera-camera-lens-752525.jpg");
         background-position: center center;
         background-size: cover;
@@ -300,6 +306,12 @@
         justify-content: center;
     }
     
+    #posts{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
     .button {
         cursor: pointer;
         position: relative;

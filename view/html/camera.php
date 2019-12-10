@@ -51,7 +51,7 @@
 					while ($image = $stmt->fetch(PDO::FETCH_ASSOC))
 					{
 				?>
-					<img src="<?=$image['path']?>" width="200" height="200"/>
+					<img src="<?=$image['path']?>"/>
 				<?php
 					}
 				?>
@@ -61,5 +61,5 @@
     <?php include('../../includes/footer.php') ?>
 </div>
 </body>
-<script src="/camagru/controller/camera.js"></script>
+<script src="/camagru/js/camera.js"></script>
 </html>

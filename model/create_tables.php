@@ -10,7 +10,7 @@ try {
         user_vkey VARCHAR(255) NOT NULL UNIQUE,
         userdp INT(6),
         user_valid tinyint(1) DEFAULT '0',
-		user_preff tinyint(1) DEFAULT '0'
+		user_preff tinyint(1) DEFAULT '1'
         )";
     // use exec() because no results are returned
     $conn->exec($sql);
