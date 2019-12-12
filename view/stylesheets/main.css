@@ -248,8 +248,8 @@
         width: 48%;
         background: var(--color_three);
     }
-
-    #pastposts img{
+    
+    #pastposts img {
         margin: 5px;
         width: 150px;
         width: 150px;
@@ -306,12 +306,33 @@
         justify-content: center;
     }
     
-    #posts{
+    #posts {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
     }
-
+    
+    .post img {
+        width: 50%;
+    }
+    
+    #posts a {
+        font-family: 'Nilland';
+        color: var(--color_five);
+        font-size: 30px;
+    }
+    
+    .uploader-info {
+        color: var(--color_three);
+    }
+    
+    .comments {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
     .button {
         cursor: pointer;
         position: relative;

@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/f7d9248e42.js" crossorigin="anonymous"></script>
-    <script src="/camagru/controller/home.js"></script>
     <link href='../stylesheets/main.css' rel='stylesheet' type='text/css'>
     <link href='../stylesheets/responsive.css' rel='stylesheet' type='text/css'>
     <link href='../stylesheets/user_form.css' rel='stylesheet' type='text/css'>
@@ -54,6 +53,12 @@
 							<td align = "right"><strong>Re-Enter Password :</strong></td>
 							<td><input type="password" name="re_password" placeholder="Confrim your password"></td>
 							<td align = "center" colspan = "8"><input type="submit" name="password" value="Update"></td>
+						</tr>
+						<tr>
+							<td align = "right"><strong>Recieve Notification</strong></td>
+							<td><input type="radio" name="notify" value="on"> On</td>
+							<td><input type="radio" name="notify" value="off"> Off</td>
+							<td align = "center" colspan = "8"><input type="submit" name="mail" value="Update"></td>
 						</tr> 
 					</table>
 				</form>

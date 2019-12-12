@@ -96,5 +96,21 @@
     }
   }
 
- ?>
+  if (isset($_POST['mail']))
+  {
+      $ID = $_SESSION['userid'];
+      $sql = "UPDATE $db.user set user_preff=? WHERE userid = ?";
+      $statement = $conn->prepare($sql); 
+      if($statement->execute(array($_POST['notify'] === "on" ? 1 : 0, $ID)))
+      {
+          $message = "Hi there, Some information on your Camagru profile has been changed!";
+          
+          mail($user_email, "Profile details changed", $message, "From :info@camagru.co.za");
+          echo"<script>alert('Notifications changed!')</script>";
+          return ;
+          
+          header('location:/camagru/index.php');
+      }
+  }
+?>
 
